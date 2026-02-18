@@ -74,4 +74,5 @@ if st.button("🔍 Predict Stroke Risk"):
         st.success("✅ Low Risk of Heart Stroke")
 
 st.markdown("---")
+
 st.caption("Developed using Streamlit & Machine Learning")
