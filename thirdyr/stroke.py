@@ -63,7 +63,7 @@ slope = st.selectbox("Slope of Peak Exercise ST Segment (0–2)", [0, 1, 2])
 ca = st.selectbox("Number of Major Vessels (0–3)", [0, 1, 2, 3])
 thal = st.selectbox("Thalassemia (0–3)", [0, 1, 2, 3])
 
-if st.button("🔍 Predict Stroke Risk"):
+if st.button(" Predict Stroke Risk"):
     input_data = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
     input_scaled = scaler.transform(input_data)
     prediction = model.predict(input_scaled)
