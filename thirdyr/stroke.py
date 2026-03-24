@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 
 st.set_page_config(page_title="Heart Stroke Prediction", layout="centered")
 
-st.title("❤️ Heart Stroke Prediction App")
+st.title("Heart Stroke Prediction App")
 st.write("This app predicts the **risk of heart stroke** using Machine Learning.")
 
 @st.cache_data
@@ -18,10 +18,10 @@ def load_data():
 try:
     df = load_data()
 except:
-    st.error("❌ heart.csv not found. Upload dataset in the same folder.")
+    st.error(" heart.csv not found. Upload dataset in the same folder.")
     st.stop()
 
-st.subheader("📊 Dataset Preview")
+st.subheader(" Dataset Preview")
 st.dataframe(df.head())
 
 X = df.drop("target", axis=1)
@@ -44,10 +44,10 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
-st.subheader("✅ Model Accuracy")
+st.subheader(" Model Accuracy")
 st.success(f"Accuracy: {accuracy * 100:.2f}%")
 
-st.subheader("🧑‍⚕️ Enter Patient Details")
+st.subheader(" Enter Patient Details")
 
 age = st.number_input("Age", 1, 120, 45)
 sex = st.selectbox("Sex (1 = Male, 0 = Female)", [1, 0])
@@ -69,9 +69,9 @@ if st.button("🔍 Predict Stroke Risk"):
     prediction = model.predict(input_scaled)
 
     if prediction[0] == 1:
-        st.error("⚠️ High Risk of Heart Stroke")
+        st.error(" High Risk of Heart Stroke")
     else:
-        st.success("✅ Low Risk of Heart Stroke")
+        st.success("Low Risk of Heart Stroke")
 
 st.markdown("---")
 
